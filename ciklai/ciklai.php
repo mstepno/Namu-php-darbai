@@ -94,8 +94,38 @@ foreach ($zodziai as $zodis) {
 }
     echo "Žodžių trumpesnių arba lygių nei 5 raidės yra: " . $skaicius; //Žodžių trumpesnių arba lygių nei 5 raidės yra 4
 
-  
-    
+    ob_clean();
+    //Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
+    $characters = 'abcdefghijklmnopqrstuvwxyz';
+$randomString = '';
+$length = 3;
+
+for ($i = 0; $i < $length; $i++) {
+    $randomString .= $characters[rand(0, strlen($characters) - 1)];
+}
+
+echo $randomString;
+
+ob_clean();
+//Parašykite kodą, kuris generuotų atsitiktinį stringą su 10 atsitiktine tvarka išdėliotų žodžių, 
+//o žodžius generavimui imtų iš 9-me uždavinyje pateiktų dviejų stringų. Žodžiai neturi kartotis. (reikės masyvo)
+$string1 = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
+$string2 = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
+
+$words1 = explode(" ", $string1); 
+$words2 = explode(" ", $string2); 
+
+$allWords = array_merge($words1, $words2); 
+$uniqueWords = array_unique($allWords); 
+
+$randomWords = array_rand($uniqueWords, 10); 
+$randomString = "";
+
+foreach ($randomWords as $wordIndex) {
+  $randomString .= $uniqueWords[$wordIndex] . " ";
+}
+
+echo $randomString;
 
     
 
