@@ -94,8 +94,8 @@ foreach ($zodziai as $zodis) {
 }
     echo "Žodžių trumpesnių arba lygių nei 5 raidės yra: " . $skaicius; //Žodžių trumpesnių arba lygių nei 5 raidės yra 4
 
-    ob_clean();
-    //Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
+ob_clean();
+//Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
     $characters = 'abcdefghijklmnopqrstuvwxyz';
 $randomString = '';
 $length = 3;
