@@ -126,13 +126,4 @@ foreach ($randomWords as $wordIndex) {
 }
 
 echo $randomString;
-
-    
-
-
-
-
-
-
-
- ?>
+?>
