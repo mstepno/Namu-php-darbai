@@ -1,0 +1,32 @@
+
+
+
+
+    .square {
+        display: inline-block; /* kad kvadratas būtų centriniame ekrano puslapyje */
+        font-size: 0; /* kad tarp žvaigždučių neliktų per didelių tarpų */
+        position: relative; /* kad būtų galima nustatyti absoliutų pozicionavimą vaikiniams elementams */
+    }
+    .square > span {
+        display: inline-block;
+        width: 1em; /* kad žvaigždučių plotis atitiktų aukštį */
+        height: 1em; /* kad žvaigždučių aukštis atitiktų plotį */
+        font-size: 16px; /* norimasis dydis, galima keisti pagal poreikį */
+        position: relative; /* kad būtų galima nustatyti absoliutų pozicionavimą */
+    }
+    .square > span:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid red; /* raudona spalva ir border plotis */
+        box-sizing: border-box; /* kad border plotis būtų įskaičiuotas į elemento dydį */
+    }
+    .square > span:nth-child(10n + 1):after,
+    .square > span:nth-child(10n):after {
+        border-top: none;
+        border-left: none;
+    }
