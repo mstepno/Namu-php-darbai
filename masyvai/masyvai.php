@@ -51,8 +51,30 @@ sort($arr);
 foreach ($arr as $letter) {
   echo $letter . ' ';
 }
+//Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. 
+//Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+ob_clean();
+function generateUniqueNumbersArray($min, $max, $count) {
+    $numbers = range($min, $max); 
+    shuffle($numbers); 
+    return array_slice($numbers, 0, $count); 
+  }
+  
+  $array1 = generateUniqueNumbersArray(100, 999, 100);
+  $array2 = generateUniqueNumbersArray(100, 999, 100);
+  
+  echo 'Array 1: ' . implode(', ', $array1) . '<br>';
+  echo 'Array 2: ' . implode(', ', $array2) . '<br>';
+  ob_clean();
+  
+  /*Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. 
+  Trečias, pirmo ir antro suma. 
+  Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.*/
+  $array = array(rand(5, 25), rand(5, 25));
+  for ($i = 2; $i < 10; $i++) {
+    $array[$i] = $array[$i - 2] + $array[$i - 1];
 
-
-
+  print_r($array);
+  }
 ?>
 
